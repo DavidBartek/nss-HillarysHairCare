@@ -18,25 +18,25 @@ public class HillarysHairDbContext : DbContext
     {
         modelBuilder.Entity<Customer>().HasData(new Customer[]
         {
-            new Customer { Id = 1, FirstName = "John", Lastname = "Doe", Email = "johndoe@example.com", Phone = "555-123-4567" },
-            new Customer { Id = 2, FirstName = "Alice", Lastname = "Smith", Email = "alice.smith@example.com", Phone = "555-987-6543" },
-            new Customer { Id = 3, FirstName = "Bob", Lastname = "Johnson", Email = "bob.johnson@example.com", Phone = "555-555-5555" },
-            new Customer { Id = 4, FirstName = "Eva", Lastname = "Williams", Email = "eva.williams@example.com", Phone = "555-888-9999" },
-            new Customer { Id = 5, FirstName = "Michael", Lastname = "Brown", Email = "michael.brown@example.com", Phone = "555-777-3333" },
-            new Customer { Id = 6, FirstName = "Sophia", Lastname = "Martinez", Email = "sophia.martinez@example.com", Phone = "555-111-2222" },
-            new Customer { Id = 7, FirstName = "William", Lastname = "Davis", Email = "william.davis@example.com", Phone = "555-444-7777" },
-            new Customer { Id = 8, FirstName = "Olivia", Lastname = "Garcia", Email = "olivia.garcia@example.com", Phone = "555-666-8888" },
-            new Customer { Id = 9, FirstName = "James", Lastname = "Miller", Email = "james.miller@example.com", Phone = "555-222-5555" },
-            new Customer { Id = 10, FirstName = "Charlotte", Lastname = "Jones", Email = "charlotte.jones@example.com", Phone = "555-999-1111" }
+            new Customer { Id = 1, FirstName = "John", LastName = "Doe", Email = "johndoe@example.com", Phone = "555-123-4567" },
+            new Customer { Id = 2, FirstName = "Alice", LastName = "Smith", Email = "alice.smith@example.com", Phone = "555-987-6543" },
+            new Customer { Id = 3, FirstName = "Bob", LastName = "Johnson", Email = "bob.johnson@example.com", Phone = "555-555-5555" },
+            new Customer { Id = 4, FirstName = "Eva", LastName = "Williams", Email = "eva.williams@example.com", Phone = "555-888-9999" },
+            new Customer { Id = 5, FirstName = "Michael", LastName = "Brown", Email = "michael.brown@example.com", Phone = "555-777-3333" },
+            new Customer { Id = 6, FirstName = "Sophia", LastName = "Martinez", Email = "sophia.martinez@example.com", Phone = "555-111-2222" },
+            new Customer { Id = 7, FirstName = "William", LastName = "Davis", Email = "william.davis@example.com", Phone = "555-444-7777" },
+            new Customer { Id = 8, FirstName = "Olivia", LastName = "Garcia", Email = "olivia.garcia@example.com", Phone = "555-666-8888" },
+            new Customer { Id = 9, FirstName = "James", LastName = "Miller", Email = "james.miller@example.com", Phone = "555-222-5555" },
+            new Customer { Id = 10, FirstName = "Charlotte", LastName = "Jones", Email = "charlotte.jones@example.com", Phone = "555-999-1111" }
         });
         
         modelBuilder.Entity<Stylist>().HasData(new Stylist[]
         {
-            new Stylist { Id = 1, FirstName = "Emily", Lastname = "Smith", IsActive = true, Email = "emily.smith@example.com", Phone = "555-123-4567" },
-            new Stylist { Id = 2, FirstName = "Daniel", Lastname = "Johnson", IsActive = false, Email = "daniel.johnson@example.com", Phone = "555-987-6543" },
-            new Stylist { Id = 3, FirstName = "Grace", Lastname = "Williams", IsActive = true, Email = "grace.williams@example.com", Phone = "555-555-5555" },
-            new Stylist { Id = 4, FirstName = "Thomas", Lastname = "Brown", IsActive = true, Email = "thomas.brown@example.com", Phone = "555-888-9999" },
-            new Stylist { Id = 5, FirstName = "Natalie", Lastname = "Garcia", IsActive = false, Email = "natalie.garcia@example.com", Phone = "555-777-3333" }
+            new Stylist { Id = 1, FirstName = "Emily", LastName = "Smith", IsActive = true, Email = "emily.smith@example.com", Phone = "555-123-4567" },
+            new Stylist { Id = 2, FirstName = "Daniel", LastName = "Johnson", IsActive = false, Email = "daniel.johnson@example.com", Phone = "555-987-6543" },
+            new Stylist { Id = 3, FirstName = "Grace", LastName = "Williams", IsActive = true, Email = "grace.williams@example.com", Phone = "555-555-5555" },
+            new Stylist { Id = 4, FirstName = "Thomas", LastName = "Brown", IsActive = true, Email = "thomas.brown@example.com", Phone = "555-888-9999" },
+            new Stylist { Id = 5, FirstName = "Natalie", LastName = "Garcia", IsActive = false, Email = "natalie.garcia@example.com", Phone = "555-777-3333" }
         });
 
         modelBuilder.Entity<Service>().HasData(new Service[]

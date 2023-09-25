@@ -22,9 +22,13 @@ public class Appointment
         {
             decimal totalCost = 0M;
             
-            foreach (ServiceAppointment serviceAppointment in ServiceAppointments)
+            if (ServiceAppointments != null)
             {
-                totalCost += serviceAppointment.Service.Cost;
+                foreach (ServiceAppointment serviceAppointment in ServiceAppointments)
+                {
+                    totalCost += serviceAppointment.Service.Cost;
+                }
+                
             }
 
             return totalCost;

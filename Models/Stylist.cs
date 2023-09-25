@@ -8,12 +8,11 @@ public class Stylist
     [Required]
     public string FirstName { get; set; }
     [Required]
-    public string Lastname { get; set; }
+    public string LastName { get; set; }
     // [Required]
     public bool IsActive { get; set; }
     [Required]
     public string Email { get; set; }
     [Required]
     public string Phone { get; set; }
-    public List<Appointment> Appointments { get; set; }
 }

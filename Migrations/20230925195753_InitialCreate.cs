@@ -17,7 +17,7 @@ namespace HillarysHair.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     FirstName = table.Column<string>(type: "text", nullable: false),
-                    Lastname = table.Column<string>(type: "text", nullable: false),
+                    LastName = table.Column<string>(type: "text", nullable: false),
                     Email = table.Column<string>(type: "text", nullable: false),
                     Phone = table.Column<string>(type: "text", nullable: false)
                 },
@@ -47,7 +47,7 @@ namespace HillarysHair.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     FirstName = table.Column<string>(type: "text", nullable: false),
-                    Lastname = table.Column<string>(type: "text", nullable: false),
+                    LastName = table.Column<string>(type: "text", nullable: false),
                     IsActive = table.Column<bool>(type: "boolean", nullable: false),
                     Email = table.Column<string>(type: "text", nullable: false),
                     Phone = table.Column<string>(type: "text", nullable: false)
@@ -113,7 +113,7 @@ namespace HillarysHair.Migrations
 
             migrationBuilder.InsertData(
                 table: "Customers",
-                columns: new[] { "Id", "Email", "FirstName", "Lastname", "Phone" },
+                columns: new[] { "Id", "Email", "FirstName", "LastName", "Phone" },
                 values: new object[,]
                 {
                     { 1, "johndoe@example.com", "John", "Doe", "555-123-4567" },
@@ -152,7 +152,7 @@ namespace HillarysHair.Migrations
 
             migrationBuilder.InsertData(
                 table: "Stylists",
-                columns: new[] { "Id", "Email", "FirstName", "IsActive", "Lastname", "Phone" },
+                columns: new[] { "Id", "Email", "FirstName", "IsActive", "LastName", "Phone" },
                 values: new object[,]
                 {
                     { 1, "emily.smith@example.com", "Emily", true, "Smith", "555-123-4567" },

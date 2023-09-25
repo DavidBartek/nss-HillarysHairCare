@@ -148,7 +148,7 @@ namespace HillarysHair.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Lastname")
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -166,7 +166,7 @@ namespace HillarysHair.Migrations
                             Id = 1,
                             Email = "johndoe@example.com",
                             FirstName = "John",
-                            Lastname = "Doe",
+                            LastName = "Doe",
                             Phone = "555-123-4567"
                         },
                         new
@@ -174,7 +174,7 @@ namespace HillarysHair.Migrations
                             Id = 2,
                             Email = "alice.smith@example.com",
                             FirstName = "Alice",
-                            Lastname = "Smith",
+                            LastName = "Smith",
                             Phone = "555-987-6543"
                         },
                         new
@@ -182,7 +182,7 @@ namespace HillarysHair.Migrations
                             Id = 3,
                             Email = "bob.johnson@example.com",
                             FirstName = "Bob",
-                            Lastname = "Johnson",
+                            LastName = "Johnson",
                             Phone = "555-555-5555"
                         },
                         new
@@ -190,7 +190,7 @@ namespace HillarysHair.Migrations
                             Id = 4,
                             Email = "eva.williams@example.com",
                             FirstName = "Eva",
-                            Lastname = "Williams",
+                            LastName = "Williams",
                             Phone = "555-888-9999"
                         },
                         new
@@ -198,7 +198,7 @@ namespace HillarysHair.Migrations
                             Id = 5,
                             Email = "michael.brown@example.com",
                             FirstName = "Michael",
-                            Lastname = "Brown",
+                            LastName = "Brown",
                             Phone = "555-777-3333"
                         },
                         new
@@ -206,7 +206,7 @@ namespace HillarysHair.Migrations
                             Id = 6,
                             Email = "sophia.martinez@example.com",
                             FirstName = "Sophia",
-                            Lastname = "Martinez",
+                            LastName = "Martinez",
                             Phone = "555-111-2222"
                         },
                         new
@@ -214,7 +214,7 @@ namespace HillarysHair.Migrations
                             Id = 7,
                             Email = "william.davis@example.com",
                             FirstName = "William",
-                            Lastname = "Davis",
+                            LastName = "Davis",
                             Phone = "555-444-7777"
                         },
                         new
@@ -222,7 +222,7 @@ namespace HillarysHair.Migrations
                             Id = 8,
                             Email = "olivia.garcia@example.com",
                             FirstName = "Olivia",
-                            Lastname = "Garcia",
+                            LastName = "Garcia",
                             Phone = "555-666-8888"
                         },
                         new
@@ -230,7 +230,7 @@ namespace HillarysHair.Migrations
                             Id = 9,
                             Email = "james.miller@example.com",
                             FirstName = "James",
-                            Lastname = "Miller",
+                            LastName = "Miller",
                             Phone = "555-222-5555"
                         },
                         new
@@ -238,7 +238,7 @@ namespace HillarysHair.Migrations
                             Id = 10,
                             Email = "charlotte.jones@example.com",
                             FirstName = "Charlotte",
-                            Lastname = "Jones",
+                            LastName = "Jones",
                             Phone = "555-999-1111"
                         });
                 });
@@ -531,7 +531,7 @@ namespace HillarysHair.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("Lastname")
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -550,7 +550,7 @@ namespace HillarysHair.Migrations
                             Email = "emily.smith@example.com",
                             FirstName = "Emily",
                             IsActive = true,
-                            Lastname = "Smith",
+                            LastName = "Smith",
                             Phone = "555-123-4567"
                         },
                         new
@@ -559,7 +559,7 @@ namespace HillarysHair.Migrations
                             Email = "daniel.johnson@example.com",
                             FirstName = "Daniel",
                             IsActive = false,
-                            Lastname = "Johnson",
+                            LastName = "Johnson",
                             Phone = "555-987-6543"
                         },
                         new
@@ -568,7 +568,7 @@ namespace HillarysHair.Migrations
                             Email = "grace.williams@example.com",
                             FirstName = "Grace",
                             IsActive = true,
-                            Lastname = "Williams",
+                            LastName = "Williams",
                             Phone = "555-555-5555"
                         },
                         new
@@ -577,7 +577,7 @@ namespace HillarysHair.Migrations
                             Email = "thomas.brown@example.com",
                             FirstName = "Thomas",
                             IsActive = true,
-                            Lastname = "Brown",
+                            LastName = "Brown",
                             Phone = "555-888-9999"
                         },
                         new
@@ -586,7 +586,7 @@ namespace HillarysHair.Migrations
                             Email = "natalie.garcia@example.com",
                             FirstName = "Natalie",
                             IsActive = false,
-                            Lastname = "Garcia",
+                            LastName = "Garcia",
                             Phone = "555-777-3333"
                         });
                 });
