@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using HillarysHair.Models;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Http.Json;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +18,7 @@ AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 builder.Services.AddNpgsql<HillarysHairDbContext>(builder.Configuration["HillarysHairDbConnectionString"]);
 
 // Set the JSON serializer options
-builder.Services.Configure<JsonOptions>(options =>
+builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options =>
 {
     options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
 });
@@ -105,7 +106,7 @@ app.MapGet("/api/appointments/{id}", (HillarysHairDbContext db, int id) =>
     }
     catch (BadHttpRequestException)
     {
-        return Results.BadRequest("please provide integers only");
+        return Results.BadRequest(new {error = "please provide an integer"});
         // how do I provide a response body? The above is not working
     }
 });
@@ -175,7 +176,7 @@ app.MapPost("/api/serviceappointments", (HillarysHairDbContext db, ServiceAppoin
 // DELETE - REMOVE service associated with an appointment
 // backend will receive a ServiceAppointment object; this will be matched to a specific member of the collection and subsequently removed
 
-app.MapDelete("/api/serviceappointments", (HillarysHairDbContext db, ServiceAppointment deletedServiceAppointment) =>
+app.MapDelete("/api/serviceappointments", (HillarysHairDbContext db, [FromBody] ServiceAppointment deletedServiceAppointment) =>
 {
     ServiceAppointment foundSA = db.ServiceAppointments.SingleOrDefault(sa => sa.ServiceId == deletedServiceAppointment.ServiceId && sa.AppointmentId == deletedServiceAppointment.AppointmentId);
     if (foundSA == null)
@@ -185,6 +186,16 @@ app.MapDelete("/api/serviceappointments", (HillarysHairDbContext db, ServiceAppo
     db.ServiceAppointments.Remove(foundSA);
     db.SaveChanges();
     return Results.NoContent();
+
+    // ServiceAppointment foundSA = db.ServiceAppointments.SingleOrDefault(sa => sa.Id == id);
+    // if (foundSA == null)
+    // {
+    //     return Results.NotFound();
+    // }
+    // db.ServiceAppointments.Remove(foundSA);
+    // db.SaveChanges();
+    // return Results.NoContent();
+
 });
 
 // delete (hard) future appointment
@@ -201,7 +212,7 @@ app.MapDelete("/api/appointments/{id}", (HillarysHairDbContext db, int id) =>
     else if (foundAppointment.StartTime <= DateTime.Today)
     {
         // if appointment's start time is present or in the past, prevent its deletion
-        return Results.Forbid();
+        return Results.BadRequest();
     }
     db.Appointments.Remove(foundAppointment);
     db.SaveChanges();
